@@ -4,14 +4,19 @@
 
 var taskControllers = angular.module('taskControllers', []);
 
-taskControllers.controller('parentCtrl1', function($scope) {});
+ taskControllers.controller('ExampleController', ['$scope', function($scope) {
+    $scope.title = 'Lorem Ipsum';
+    $scope.text = 'Neque porro quisquam est qui dolorem ipsum quia dolor...';
+  }]);
 
-taskControllers.controller('parentCtrl2', function($scope) {});
+  taskControllers.controller('TabController', ['$scope', function($scope) {
+    $scope.tab = 1;
 
-taskControllers.controller('ChildCtrl1', function($scope, $controller) {   
-    angular.extend(this, $controller('parentCtrl1', {$scope: $scope}));  
-});
+    $scope.setTab = function(newTab){
+      $scope.tab = newTab;
+    };
 
-taskControllers.controller('ChildCtrl2', function($scope, $controller) {
-    angular.extend(this, $controller('parentCtrl1', {$scope: $scope}));
-});
+    $scope.isSet = function(tabNum){
+      return $scope.tab === tabNum;
+    };
+}]);
