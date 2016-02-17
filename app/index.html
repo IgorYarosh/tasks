@@ -9,31 +9,24 @@
   <script src="js/controllers.js"></script>
 </head>
 
-<body ng-init="query = 'init text' ">
-
- 
-
+<body ng-init = "sharedObject.query = 'init value'">
     <div class="row">
      
         <div class="col-md-4" ng-controller="parentCtrl1">       
-          Search1: <input ng-model="query">  {{query}}
-              
+          Search1: <input ng-model="sharedObject.query">  {{sharedObject.query}}              
               <div ng-controller="ChildCtrl1">                
-                 SearchChild1: <input ng-model="ChildCtrl1.query" ng-change="setParentQuery()"> {{ChildCtrl1.query}}
+                 SearchChild1: <input ng-model="sharedObject.query"> {{sharedObject.query}}
               </div>
               <div ng-controller="ChildCtrl2">
-                 SearchChild2: <input ng-model="ChildCtrl2.query">  {{ChildCtrl2.query}}
+                 SearchChild2: <input ng-model="sharedObject.query">  {{sharedObject.query}}
               </div>
-
         </div>
 
         <div class="col-md-4" ng-controller="parentCtrl2">        
-          Search2: <input ng-model="query">  {{query}}
+          Search2: <input ng-model="sharedObject.query">  {{sharedObject.query}}
         </div>
-
   
-
-  </div>
+    </div>
 
 </body>
 </html>
