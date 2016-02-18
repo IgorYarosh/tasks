@@ -1,0 +1,11 @@
+<div class="col-md-8">
+	<div class="jumbotron">
+		<div ng-repeat="tabd in $parent.$parent.$parent.tabsarray">
+			<div ng-show="isSet($index+1)">
+				<h1>{{tabd.tabTitle}}</h1>
+				<p>{{tabd.tabContent}}</p>
+				<p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+			</div>
+		</div>
+
+</div>

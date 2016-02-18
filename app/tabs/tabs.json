@@ -1,10 +1,14 @@
 [
  {
   "tabTitle": "titleValue1",
-  "TabContent": "contentValue1"
+  "tabContent": "contentValue1"
  },
  {
   "tabTitle": "titleValue2",
-  "TabContent": "contentValue2"
+  "tabContent": "contentValue2"
+ },
+  {
+  "tabTitle": "titleValue3",
+  "tabContent": "contentValue3"
  }
 ]

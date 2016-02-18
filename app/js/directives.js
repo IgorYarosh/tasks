@@ -9,9 +9,7 @@ var taskDirectives = angular.module('taskDirectives', []);
 							        restrict: 'E',
 							        transclude: true,
 							        scope: { title:'@',tabsarray:'=' },
-							        template: '<div ng-include src="\'partials/Tab30.html\'"></div>'
-
-
-
+							        template:  '<ng-transclude></ng-transclude>'+
+							                   '<div ng-include src="\'partials/Tab30.html\'"></div>'							       
 							      };
 							  })
