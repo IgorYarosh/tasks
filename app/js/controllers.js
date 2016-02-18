@@ -9,12 +9,12 @@ var taskControllers = angular.module('taskControllers', []);
  taskControllers.controller('TabsListCtrl', ['$scope','$http', function($scope, $http) {
   
 
-  console.log("asasas1");
+ 
   $http.get('tabs/tabs.json').success(function(data) {
-    $scope.tabs = data;
+    $scope.tabsArray = data;
   });
 
-  console.log("asasas");
+  
   }]);
 
  taskControllers.controller('ExampleController', ['$scope', function($scope) {

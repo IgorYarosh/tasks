@@ -1,0 +1,5 @@
+<ul class="nav nav-pills nav-stacked" ng-repeat="tabd in $parent.$parent.$parent.tabsarray">
+	 <li ng-class="{ active: isSet($index+1) }">
+		  <a href ng-click="setTab($index+1)">{{tabd.tabTitle}}</a> 		 
+	</li> 
+</ul>

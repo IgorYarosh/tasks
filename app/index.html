@@ -18,20 +18,9 @@
 
 <body  ng-app="taskApp">
 
-<!-- 
-<div ng-controller="ExampleController">  
-  <tabs title="{{title}}">
-    <span>{{text}}</span>
-  </tabs>
-</div> -->
-
-<div ng-controller="TabsListCtrl">
-    <!-- <div ng-repeat="tab in tabs">
-      {{tab.tabTitle}}
-    </div>  -->
-
-<div ng-include src="'partials/Tab12.html'"></div>
-
+  <div ng-controller="TabsListCtrl">
+        <tabs tabsarray="tabsArray"></tabs>
+  <div>
 </div>
 
 </body>
