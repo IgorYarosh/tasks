@@ -1,0 +1,7 @@
+zzzzzzzzzhhhhhhhhhh
+<ul class="nav nav-pills nav-stacked" ng-repeat="tab in tabs">
+	 <li ng-class="{ active: isSet($index+1) }">
+		  <a href ng-click="setTab($index+1)">{{tab.tabTitle}}</a> 		 
+	</li> 
+	{{ $index+1 }}
+</ul>
