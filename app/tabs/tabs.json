@@ -1,14 +1,15 @@
 [
+
  {
-  "tabTitle": "titleValue1",
-  "tabContent": "contentValue1"
+  "id":"fruits_en",
+  "title": "fruits_en",
+  "items": "banana"
  },
+
  {
-  "tabTitle": "titleValue2",
-  "tabContent": "contentValue2"
- },
-  {
-  "tabTitle": "titleValue3",
-  "tabContent": "contentValue3"
+  "id":"vegetables_en",
+  "title": "vegetables_en",
+  "items": "tomato"
  }
+
 ]
