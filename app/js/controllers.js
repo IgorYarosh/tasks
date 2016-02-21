@@ -16,3 +16,16 @@ var taskControllers = angular.module('taskControllers', []);
   
   }]);
 
+   taskControllers.controller('ExampleController', ['$scope', '$window', function($scope, $window) {
+      $scope.greeting = 'Hello';
+      $scope.greeting2 = 'World';
+      $scope.doGreeting = function(greeting) {
+        $window.alert(greeting);
+      };
+
+
+	 $scope.doGreeting2 = function(greeting2) {
+	   $window.alert(greeting2);
+	 };
+    }]);
+

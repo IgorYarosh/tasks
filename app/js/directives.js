@@ -17,9 +17,13 @@ taskDirectives.directive('myTabs', function() {
           pane.selected = false;
         });
         pane.selected = true;
+        if (panes.length != 0){
+        pane.action();
+        
+        }
       };
 
-      this.addPane = function(pane) {
+      this.addPane = function(pane) {       
         if (panes.length === 0) {
           $scope.select(pane);
         }
@@ -36,7 +40,8 @@ taskDirectives.directive('myPane', function() {
     restrict: 'E',
     transclude: true,
     scope: {
-      title: '@'
+      title: '@',
+      action: '&'
     },
     link: function(scope, element, attrs, tabsCtrl) {
       tabsCtrl.addPane(scope);
