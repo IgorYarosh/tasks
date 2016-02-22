@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" id="app-container">
+<head>
+  <meta charset="utf-8">
+  <title>Angular Tasks</title>
+  <link rel="stylesheet" src="css/style.css">
+ 
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"> 
+  <script src="../bower_components/jquery/dist/jquery.min.js">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+
+</head>
+
+<body  ng-app="taskApp">
+
+
+<div ng-controller="ParentCtrl as parent" class="ng-scope">
+
+  <div ng-controller="SiblingOneCtrl as sib1" class="ng-scope"> 
+  </div>
+
+  <div ng-controller="SiblingTwoCtrl as sib2" class="ng-scope">
+    
+      <div ng-controller="ChildCtrl as child" class="ng-scope">
+               <label>Input your name:</label>
+               <br/>
+               <input type="text" name="input" ng-model="text"> 
+               <br/>
+               <button ng-click="sendTo()" >Say hello</button>
+      </div>
+
+  </div>
+
+</div>
+
+
+</div>
+</body>
+</html>
