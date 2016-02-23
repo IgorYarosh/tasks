@@ -1,0 +1,42 @@
+  <!doctype html>
+<html lang="en" id="app-container">
+<head>
+  <meta charset="utf-8">
+  <title>Angular Tasks</title>
+  <link rel="stylesheet" src="css/style.css">
+ 
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"> 
+  <script src="../bower_components/jquery/dist/jquery.min.js">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+<!-- <script src="js/services.js"></script>
+  <script src="js/directives.js"></script> -->
+
+
+</head>
+
+
+  <body ng-app="taskApp">
+      
+      <div ng-controller="SetTimeOutController$">
+        $ Delayed Message: {{message}}
+      </div> 
+
+      <div ng-controller="SetTimeOutController">
+        Delayed Message: {{message2}}
+      </div> 
+
+      <div ng-controller="ClickController$">$      
+      <button ng-click="say()" >Click</button>	$ Delayed Message: {{message}}
+      </div>
+
+      <div ng-controller="ClickController">
+      <button click="say2()" >Click</button> 	Delayed Message: {{message}}
+      </div>
+
+    </body>
+</html>
+
