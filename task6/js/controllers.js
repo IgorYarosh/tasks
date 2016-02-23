@@ -39,53 +39,69 @@ taskControllers.controller('ClickController$', function($scope) {
     
     });
 
-taskControllers.controller('ClickController', function($scope) {
-    
-      $scope.say = function() {        
-          //$scope.$apply(function() {
-	          $scope.message = 'Hello3';
-	          console.log('message:'+$scope.message); 
-
-          //});    
-      }
-    
-    });
 
 
  
+$(function(){
 
-   function say(){
-    alert("adssa");
-   }
+    $("#bt1").on("click",function(){      
+          angular.element($("#bt1")).scope().say();    
+    });
 
-taskControllers.controller('AjaxController$', function($scope,$http,$window) {
+    $("#bt2").on("click",function(){      
+          angular.element($("#bt2")).scope().say();    
+    });
+
+});
+
+taskControllers.controller('ClickController', function($scope) {
     
-      $scope.saydd = function() {        
-         $http({
-        method: 'GET',
-        url: 'http://localhost:8000/task6/json/hello.json'       
-     }).success(function(data){       
-        $window.alert(JSON.stringify(data));
-    }).error(function(){
-        $window.alert("error");
-    });          
+      $scope.say = function() {        
+          $scope.$apply(function() {
+	          $scope.message = 'Hello3';
+	          console.log('message:'+$scope.message); 
+
+          });    
       }
     
     });
 
-taskControllers.controller('AjaxController', function($scope,$http,$window) {
+
+
+taskControllers.controller('AjaxController$', function($scope,$http,$window) {
     
-      $scope.saydd = function() {        
+  
+
+      $scope.say = function() {        
          $http({
         method: 'GET',
         url: 'http://localhost:8000/task6/json/hello.json'       
-     }).success(function(data){       
-        $window.alert("hello "+ data);
-    }).error(function(){
-        $window.alert("error ");
-    });          
+	     }).success(function(data){       
+	        $scope.message=JSON.stringify(data);
+	    }).error(function(){
+	        $window.alert("error");
+	    });          
       }
     
+    });
+
+
+
+taskControllers.controller('AjaxController', function($scope,$http,$window) {
+
+
+        $scope.say = function() {           
+				$.ajax({
+				  type: 'GET',
+				  url: 'http://localhost:8000/task6/json/hello.json',
+					  success: function(data){
+					   $scope.$apply(function() {
+					       $scope.message=JSON.stringify(data);
+					   });
+					}		  
+                });         
+      }
+       
     });
 
       
