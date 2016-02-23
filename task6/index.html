@@ -26,15 +26,22 @@
       </div> 
 
       <div ng-controller="SetTimeOutController">
-        Delayed Message: {{message2}}
+        Delayed Message: {{message}}
       </div> 
-
+<br/>
+<br/>
       <div ng-controller="ClickController$">$      
-      <button ng-click="say()" >Click</button>	$ Delayed Message: {{message}}
+      <button ng-click="say()" >Click</button> Delayed Message: {{message}}
       </div>
 
       <div ng-controller="ClickController">
-      <button click="say2()" >Click</button> 	Delayed Message: {{message}}
+      <button onclick="say()" >Click</button> 	Delayed Message: {{message}}
+      </div>
+
+<br/>
+<br/>
+      <div ng-controller="AjaxController$">
+      <button ng-click="saydd()" >Click</button> 	Delayed Message: {{message}}
       </div>
 
     </body>
