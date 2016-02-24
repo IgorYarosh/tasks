@@ -1,34 +1,28 @@
 $(function() {
 
-  $("#bt1").on("click",function(){      
-   
-   $( "#dialog").html("");
-   var files = [ "file1","file2","file3" ]
-
-   for(var i = 0; i < files.length;i++){    
-       $( "<div><input type=\"checkbox\"/>&nbsp;"+files[i]+"</div>" ).appendTo($( "#dialog"))
-    }
-
-     $( "#dialog").dialog();     
-    });
-
-
-
-/*        $.widget( "custom.progressbar", {
+       $.widget( "custom.igorWidget", {
      
         // Default options.
         options: {
-            value: 0
+            value: 0,
+            files : [ "file1","file2","file3" ]
         },
+
         _create: function() {
-            var progress = this.options.value + "%";
-            this.element
-                .addClass( "progressbar" )
-                .text( progress );
+
+             var files = this.options.files;
+
+             for(var i = 0; i < files.length;i++){    
+                $( "<div><input type=\"checkbox\"/>&nbsp;"+files[i]+"</div>" ).appendTo($( "#dialog"))
+             }
+
+              $( "#dialog").dialog(); 
         }
-        });*/
+
+        });
    
 
+        $(".igorWidget").igorWidget();
      
 });
 
