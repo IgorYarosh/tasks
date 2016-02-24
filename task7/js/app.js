@@ -2,6 +2,6 @@
 
 /* App Module */
 
-var taskApp = angular.module('taskApp', ['taskControllers']);
+var taskApp = angular.module('taskApp', ['taskControllers','taskDirectives']);
 
 

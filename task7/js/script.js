@@ -3,24 +3,39 @@ $(function() {
        $.widget( "custom.igorWidget", {
             
             options: {           
-                files : [ "file1","file2","file3" ]
+                list : [ "file1","file2","file3" ],
+                selected : ["file1","file2"]
             },
 
             _create: function() {
-                 var files = this.options.files;             
+                 var list = this.options.list;             
                  $("<div id=\"dialog\" style=\"display: none;\"></div>").appendTo($( "body"));
-                 for(var i = 0; i < files.length;i++){    
-                    $( "<div><input type=\"checkbox\"/>&nbsp;"+files[i]+"</div>" ).appendTo($( "#dialog"))
+                 for(var i = 0; i < list.length;i++){    
+                    $( "<div><input type=\"checkbox\"/>&nbsp;"+list[i]+"</div>" ).appendTo($( "#dialog"))
                  }
                   $( "#dialog").dialog(); 
             },
 
-            setValue: function( value ) {         
+            setList: function( value ) {         
                console.log("set value " + value);
+               this.options.list = value;
             },
 
-            getValue: function(  ) {
+            getList: function(  ) {
                console.log("get value ");
+                return this.options.list;
+              
+            },
+
+            setSelected: function( value ) {         
+               console.log("set value " + value);
+               this.options.selected = value;
+            },
+
+            getSelected: function(  ) {
+               console.log("get value ");
+                return this.options.selected;
+              
             },
 
             onValueChanged: function(  ) {
@@ -34,21 +49,14 @@ $(function() {
         });
 
 
-        var iWidget = $(".igorWidget").igorWidget();
+      $(".igorWidget").igorWidget();
+      $(".igorWidget").igorWidget("setList", [ "file111","file222","filezzzzz" ]);
+      $(".igorWidget").igorWidget("setSelected", [ "file111","file222"]);
 
-/*        var widgetAPI = {};
+
         
-        widgetAPI.getValue = (function getValue() {
-             console.log("getValue main"); 
-        })();
-
-        widgetAPI.setValue = (function setValue(value) {
-             console.log("setValue main"); 
-        })();
-
-        widgetAPI.onValueChanged = (function onValueChanged(value) {
-             console.log("onValueChanged main"); 
-        })();*/
+          /*angular.element($("filelist")).scope().createWidget();    */
+    
 
      
 });

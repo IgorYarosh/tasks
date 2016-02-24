@@ -1,11 +1,5 @@
  [
-	{
-	"file":"file111"
-	},
-	{
-	"file":"file222"
-	},
-	{
-	"file":"file333"
-	}
+"file1",
+"file2",
+"file3"
  ]
