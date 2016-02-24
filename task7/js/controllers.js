@@ -4,11 +4,22 @@
 
 var taskControllers = angular.module('taskControllers', []);
 
-/*taskControllers.controller('SetTimeOutController$', function($scope,$timeout) {
+
+taskControllers.controller('AjaxController$', function($scope, $http, $window, $interval) {     
     
-    $timeout(function() {
-         $scope.message = 'Hello'; 
-            console.log('message:' + $scope.message);
-    }, 2000);
+      $scope.say = function() {                
+         $interval(function() {         
+                   $http({
+                          method: 'GET',
+                          url: 'http://localhost:8000/task7/json/Files.json'       
+                   }).success(function(data){                                                                      
+                        $window.alert($scope.message=JSON.stringify(data));                                                             
+                   }).error(function(){
+                        $window.alert("error");
+                   });  
+              }, 2000);        
+      }
     
-    });*/
+      $scope.say();
+
+    });

@@ -2,35 +2,54 @@ $(function() {
 
        $.widget( "custom.igorWidget", {
             
-        options: {           
-            files : [ "file1","file2","file3" ]
-        },
+            options: {           
+                files : [ "file1","file2","file3" ]
+            },
 
-        _create: function() {
-             var files = this.options.files;             
-             $("<div id=\"dialog\" style=\"display: none;\"></div>").appendTo($( "body"));
-             for(var i = 0; i < files.length;i++){    
-                $( "<div><input type=\"checkbox\"/>&nbsp;"+files[i]+"</div>" ).appendTo($( "#dialog"))
-             }
-              $( "#dialog").dialog(); 
-        },
+            _create: function() {
+                 var files = this.options.files;             
+                 $("<div id=\"dialog\" style=\"display: none;\"></div>").appendTo($( "body"));
+                 for(var i = 0; i < files.length;i++){    
+                    $( "<div><input type=\"checkbox\"/>&nbsp;"+files[i]+"</div>" ).appendTo($( "#dialog"))
+                 }
+                  $( "#dialog").dialog(); 
+            },
 
-        setValue: function( value ) {         
-           console.log("set value " + value);
-        },
+            setValue: function( value ) {         
+               console.log("set value " + value);
+            },
 
-        getValue: function(  ) {
-           console.log("get value ");
-        },
+            getValue: function(  ) {
+               console.log("get value ");
+            },
 
-        onValueChanged: function(  ) {
-           console.log("onValueChanged ");
-        },
+            onValueChanged: function(  ) {
+               console.log("onValueChanged ");
+            },
+
+            _destroy: function () {  
+               console.log("destroy ");        
+            }
 
         });
-   
 
-        $(".igorWidget").igorWidget();
+
+        var iWidget = $(".igorWidget").igorWidget();
+
+        function getValue(value) {
+             console.log("getValue main"); 
+        };
+        
+        function setValue(value) {
+             console.log("setValue main"); 
+        };
+
+        function onValueChanged(value) {
+             console.log("onValueChanged main"); 
+        }
+
+
+
      
 });
 
