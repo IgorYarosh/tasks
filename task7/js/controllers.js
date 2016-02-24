@@ -12,14 +12,17 @@ taskControllers.controller('AjaxController$', function($scope, $http, $window, $
                    $http({
                           method: 'GET',
                           url: 'http://localhost:8000/task7/json/Files.json'       
-                   }).success(function(data){                                                                      
-                        $window.alert($scope.message=JSON.stringify(data));                                                             
-                   }).error(function(){
-                        $window.alert("error");
+                   }).success(function(data){                                                                                              
+                        console.log($scope.message=JSON.stringify(data)); 
+                        $('.igorWidget').igorWidget("setValue","1");                                                          
+                   }).error(function(){                        
+                        console.log("error");   
                    });  
               }, 2000);        
       }
     
       $scope.say();
+
+      //$("widgetAPI").getValue();
 
     });

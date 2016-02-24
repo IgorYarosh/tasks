@@ -36,19 +36,19 @@ $(function() {
 
         var iWidget = $(".igorWidget").igorWidget();
 
-        function getValue(value) {
-             console.log("getValue main"); 
-        };
+/*        var widgetAPI = {};
         
-        function setValue(value) {
+        widgetAPI.getValue = (function getValue() {
+             console.log("getValue main"); 
+        })();
+
+        widgetAPI.setValue = (function setValue(value) {
              console.log("setValue main"); 
-        };
+        })();
 
-        function onValueChanged(value) {
+        widgetAPI.onValueChanged = (function onValueChanged(value) {
              console.log("onValueChanged main"); 
-        }
-
-
+        })();*/
 
      
 });
