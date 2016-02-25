@@ -4,7 +4,7 @@
 
 var taskDirectives = angular.module('taskDirectives', []);
 
-taskDirectives.directive('filelist', function() {
+taskDirectives.directive('filelist',function($rootScope) {
   return {
     restrict: 'E',
     transclude: true,  
@@ -16,7 +16,9 @@ taskDirectives.directive('filelist', function() {
 
     controller: ['$scope',function($scope) {
 
+
       $scope.createWidget = function() {
+
         console.log("asd");
 /*        $(".igorWidget").igorWidget();
         $(".igorWidget").igorWidget("setList", [ "file111","file222","filezzzzz" ]);
@@ -34,7 +36,8 @@ taskDirectives.directive('filelist', function() {
 
 
    link: function($scope, $element, $attrs, $ctrl ) {
-
+    $rootScope.list = $scope.list;
+        $rootScope.selected = $scope.selected;
             
 
     },
