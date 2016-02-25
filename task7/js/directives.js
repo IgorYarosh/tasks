@@ -11,7 +11,7 @@ taskDirectives.directive('filelist',function($rootScope) {
     scope: {
       list : '=',
       selected : '=',
-      callback : '&'
+      cb : '&'
     },
 
     controller: ['$scope', function($scope) {
@@ -30,9 +30,10 @@ taskDirectives.directive('filelist',function($rootScope) {
       var directive = $element;
       $scope.dr = directive; 
       
-      directive.igorWidget({complete: function( event, data ) {
-            alert( "Callbacks are great!" );
-        }});
+      directive.igorWidget({zzz: $scope.cb    
+
+      });
+      
       directive.igorWidget("setList", $scope.list);
       directive.igorWidget("setSelected", $scope.selected);
       directive.igorWidget("refresh",$element);
@@ -40,7 +41,7 @@ taskDirectives.directive('filelist',function($rootScope) {
 
     },
    
-    template: '<div class="igorWidget"></div>'
+    template: ''
   };
 });
 

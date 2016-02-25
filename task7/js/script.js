@@ -11,7 +11,8 @@
               console.log(2);
               var list = this.options.list;
               var isChecked="";             
-              var dlg = $("<div style=\"display: none;\"></div>").appendTo("body");
+              var dlg = $("<div style=\"display: none;\"></div>");
+              this.element.html(dlg);
               for(var i = 0; i < list.length;i++){  
                if($.inArray(list[i], this.options.selected)!=-1){
                     isChecked = "checked='checked'";
@@ -28,7 +29,8 @@
                 this._on('.ddd', {
                     click: function(event) {
                         console.log("ddd");
-                        this._trigger( "complete" );
+                       
+                        this._trigger( "zzz" );
 
                     }
                 });
