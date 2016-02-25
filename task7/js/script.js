@@ -1,10 +1,41 @@
        $.widget( "custom.igorWidget", {
             
+
+
             options: {           
                 list : [ "file1","file2","file3" ],
                 selected : ["file1","file2"],               
             },
 
+
+
+
+            _create: function () {
+
+
+                            console.log(2);
+                            var list = this.options.list;
+                            var isChecked="";             
+                             var dlg = $("<div id=\"dialog\" style=\"display: none;\"></div>").appendTo("body");
+                            for(var i = 0; i < list.length;i++){  
+                             if($.inArray(list[i], this.options.selected)!=-1){
+                                  isChecked = "checked='checked'";
+                             } else{
+                                isChecked = "";
+                             } 
+                                $( "<div><input class=\"ddd\" type=\"checkbox\"/ "+isChecked+" onclick=\"  \" >&nbsp;"+list[i]+"</div>" )
+                                .appendTo($( "#dialog"))
+                             }
+                              console.log(3);
+                              dlg.dialog();
+
+
+            this._on('.ddd', {
+                click: function(event) {
+            console.log("ddd");
+                }
+            });
+            },
 
             setList: function( value ) {                        
                this.options.list = value;
@@ -25,7 +56,7 @@
 
 
             onValueChanged: function(value) {               
-               var isConsist = false;
+/*               var isConsist = false;
                for(var i =0;i<this.options.selected.length;i++){
                    if(this.options.selected[i]==value){
                    this.options.selected.splice( i, 1 );                                   
@@ -36,28 +67,18 @@
 
                if(!isConsist){
                    this.options.selected.push(value);
-               }        
-               console.log(this.options.selected.join(" |,| "));       
+               }*/        
+               //console.log(this.options.selected.join(" |,| "));       
+               console.log(1);       
             },
 
             refresh: function() {
-                var list = this.options.list;
-                var isChecked="";             
-                 $("<div id=\"dialog\" style=\"display: none;\"></div>").appendTo($( "body"));
-                for(var i = 0; i < list.length;i++){  
-                 if($.inArray(list[i], this.options.selected)!=-1){
-                      isChecked = "checked='checked'";
-                 } else{
-                    isChecked = "";
-                 } 
-                    $( "<div><input type=\"checkbox\"/ "+isChecked+" onclick=\"$('.igorWidget').igorWidget('onValueChanged','"+list[i]+"')\">&nbsp;"+list[i]+"</div>" )
-                    .appendTo($( "#dialog"))
-                 }
-                  $("#dialog").dialog();
+
+
 
            }
-
-
+//$("+element+").igorWidget(\"onValueChanged\", \"File1\");
+  //    this.onValueChanged("+list[i]+"
         });
 
 

@@ -14,22 +14,27 @@ taskDirectives.directive('filelist',function($rootScope) {
       callback : '&'
     },
 
-    controller: ['$scope',function($scope) {
+    controller: ['$scope', function($scope) {
+
+      
+      $scope.say = function() {         
+           $scope.dr.igorWidget("refresh");
+      };
 
 
 
     }],
 
-
    link: function($scope, $element, $attrs, $ctrl ) {
 
-      var igorWidget = $(".igorWidget").igorWidget();
-
+      var directive = $element;
+      $scope.dr = directive; 
       
-      igorWidget.igorWidget("setList", [ "File1","File2","File3","File4","File5","File6","File7","File8","File9" ]);
-      igorWidget.igorWidget("setSelected", [ "File1","File2","File5","File8","File9" ]);
-      igorWidget.igorWidget("refresh");
-           
+      directive.igorWidget();
+      directive.igorWidget("setList", $scope.list);
+      directive.igorWidget("setSelected", $scope.selected);
+      directive.igorWidget("refresh",$element);
+           //directive.children()[0]
 
     },
    
