@@ -1,40 +1,37 @@
        $.widget( "custom.igorWidget", {
             
-
-
             options: {           
                 list : [ "file1","file2","file3" ],
                 selected : ["file1","file2"],               
             },
 
-
-
-
             _create: function () {
 
 
-                            console.log(2);
-                            var list = this.options.list;
-                            var isChecked="";             
-                             var dlg = $("<div id=\"dialog\" style=\"display: none;\"></div>").appendTo("body");
-                            for(var i = 0; i < list.length;i++){  
-                             if($.inArray(list[i], this.options.selected)!=-1){
-                                  isChecked = "checked='checked'";
-                             } else{
-                                isChecked = "";
-                             } 
-                                $( "<div><input class=\"ddd\" type=\"checkbox\"/ "+isChecked+" onclick=\"  \" >&nbsp;"+list[i]+"</div>" )
-                                .appendTo($( "#dialog"))
-                             }
-                              console.log(3);
-                              dlg.dialog();
+              console.log(2);
+              var list = this.options.list;
+              var isChecked="";             
+              var dlg = $("<div style=\"display: none;\"></div>").appendTo("body");
+              for(var i = 0; i < list.length;i++){  
+               if($.inArray(list[i], this.options.selected)!=-1){
+                    isChecked = "checked='checked'";
+               } else{
+                  isChecked = "";
+               } 
+                  $( "<div><input class=\"ddd\" type=\"checkbox\"/ "+isChecked+">&nbsp;"+list[i]+"</div>" )
+                  .appendTo(dlg)
+               }
+                console.log(3);
+                dlg.dialog();
 
 
-            this._on('.ddd', {
-                click: function(event) {
-            console.log("ddd");
-                }
-            });
+                this._on('.ddd', {
+                    click: function(event) {
+                        console.log("ddd");
+                        this._trigger( "complete" );
+
+                    }
+                });
             },
 
             setList: function( value ) {                        

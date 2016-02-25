@@ -30,7 +30,9 @@ taskDirectives.directive('filelist',function($rootScope) {
       var directive = $element;
       $scope.dr = directive; 
       
-      directive.igorWidget();
+      directive.igorWidget({complete: function( event, data ) {
+            alert( "Callbacks are great!" );
+        }});
       directive.igorWidget("setList", $scope.list);
       directive.igorWidget("setSelected", $scope.selected);
       directive.igorWidget("refresh",$element);
