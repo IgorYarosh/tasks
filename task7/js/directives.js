@@ -17,27 +17,19 @@ taskDirectives.directive('filelist',function($rootScope) {
     controller: ['$scope',function($scope) {
 
 
-      $scope.createWidget = function() {
-       
-/*        $(".igorWidget").igorWidget();
-        $(".igorWidget").igorWidget("setList", [ "file111","file222","filezzzzz" ]);
-        $(".igorWidget").igorWidget("setSelected", [ "file111","file222"]);*/
-      };
-
-      this.createWidget2 = function() {
-      
-/*        $(".igorWidget").igorWidget();
-        $(".igorWidget").igorWidget("setList", [ "file111","file222","filezzzzz" ]);
-        $(".igorWidget").igorWidget("setSelected", [ "file111","file222"]);*/
-      };
 
     }],
 
 
    link: function($scope, $element, $attrs, $ctrl ) {
-    $rootScope.list = $scope.list;
-        $rootScope.selected = $scope.selected;
-            
+
+      var igorWidget = $(".igorWidget").igorWidget();
+
+      
+      igorWidget.igorWidget("setList", [ "File1","File2","File3","File4","File5","File6","File7","File8","File9" ]);
+      igorWidget.igorWidget("setSelected", [ "File1","File2","File5","File8","File9" ]);
+      igorWidget.igorWidget("refresh");
+           
 
     },
    
