@@ -18,15 +18,14 @@ taskDirectives.directive('filelist',function($rootScope) {
 
 
       $scope.createWidget = function() {
-
-        console.log("asd");
+       
 /*        $(".igorWidget").igorWidget();
         $(".igorWidget").igorWidget("setList", [ "file111","file222","filezzzzz" ]);
         $(".igorWidget").igorWidget("setSelected", [ "file111","file222"]);*/
       };
 
       this.createWidget2 = function() {
-        console.log("asd");
+      
 /*        $(".igorWidget").igorWidget();
         $(".igorWidget").igorWidget("setList", [ "file111","file222","filezzzzz" ]);
         $(".igorWidget").igorWidget("setSelected", [ "file111","file222"]);*/

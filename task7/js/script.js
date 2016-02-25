@@ -8,31 +8,25 @@ $(function() {
             },
 
 
-            setList: function( value ) {         
-               console.log("set value " + value);
+            setList: function( value ) {                        
                this.options.list = value;
             },
 
             getList: function(  ) {
-               console.log("get value ");
-                return this.options.list;
-              
+                return this.options.list;              
             },
 
             setSelected: function( value ) {         
-               console.log("set value " + value);
                this.options.selected = value;
             },
 
             getSelected: function(  ) {
-               console.log("get value ");
                 return this.options.selected;
               
             },
 
             onValueChanged: function(value) {               
                var isConsist = false;
-               console.log("onValueChanged " + value);
                for(var i =0;i<this.options.selected.length;i++){
                    if(this.options.selected[i]==value){
                    this.options.selected.splice( i, 1 );                                   
@@ -43,8 +37,8 @@ $(function() {
 
                if(!isConsist){
                    this.options.selected.push(value);
-               }
-               console.log("onValueChanged " + this.options.selected);
+               }        
+               console.log(this.options.selected.join(" |,| "));       
             },
 
             refresh: function() {
@@ -61,18 +55,15 @@ $(function() {
                  }
                   $( "#dialog").dialog();
 
-           },
+           }
 
-            _destroy: function () {  
-               console.log("destroy ");        
-            }
 
         });
 
 
       $(".igorWidget").igorWidget();
-      $(".igorWidget").igorWidget("setList", [ "file111","file222","filezzzzz" ]);
-      $(".igorWidget").igorWidget("setSelected", [ "file111","file222"]);
+      $(".igorWidget").igorWidget("setList", [ "File1","File2","File3","File4","File5","File6","File7","File8","File9" ]);
+      $(".igorWidget").igorWidget("setSelected", [ "File1","File2","File5","File8","File9" ]);
       $(".igorWidget").igorWidget("refresh");
 
 
