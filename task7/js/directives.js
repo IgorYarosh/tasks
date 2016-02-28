@@ -7,6 +7,7 @@ var taskDirectives = angular.module('taskDirectives', []);
 taskDirectives.directive('filelist',function($rootScope) {
   return {
     restrict: 'E',  
+    transclude: true,  
     scope: {
       list : '=',
       selected : '=',
@@ -23,20 +24,11 @@ taskDirectives.directive('filelist',function($rootScope) {
                             list : $scope.list,
                             selected: $scope.selected     
                            }
-                         );
+                          );
 
 
     },
+     template: '<transclude></transclude>'
    
   };
 });
-
-
-
-
-
-
-
-
-
-

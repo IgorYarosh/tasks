@@ -1,5 +1,10 @@
        $.widget( "custom.igorWidget", {
             
+/*             options: {              
+                 list : [ "file1","file2","file3" ],   
+                 selected : ["file1","file2"]                   
+             },*/
+
             _create: function () {
 
               var dlg = $("<div style=\"display: none;\"></div>");
@@ -49,6 +54,22 @@
                }      
              
             },
+/*             setList: function( value ) {                           
+                this.options.list = value;   
+             },    
+     
+             getList: function(  ) {   
+                 return this.options.list;                 
+             },    
+     
+             setSelected: function( value ) {            
+                this.options.selected = value;   
+             },    
+     
+             getSelected: function(  ) {   
+                 return this.options.selected;   
+                   
+              }*/
 
 
         });
