@@ -20,7 +20,15 @@ taskDirectives.directive('filelist',function($rootScope) {
       
       filelist.igorWidget(
                            {
-                            cb: $scope.cb,
+                            cb: function(list, selected){
+                              if(!$scope.$$phase){
+                                $scope.$apply(function(){
+                                  $scope.cb(list, selected);
+                                });                                
+                              } else {
+                                $scope.cb(list, selected);
+                              }
+                            },
                             list : $scope.list,
                             selected: $scope.selected     
                            }

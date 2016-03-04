@@ -1,9 +1,6 @@
        $.widget( "custom.igorWidget", {
             
-/*             options: {              
-                 list : [ "file1","file2","file3" ],   
-                 selected : ["file1","file2"]                   
-             },*/
+
 
             _create: function () {
 
@@ -27,11 +24,11 @@
                      
                 this._on('.igorWidgetCheckbox', {
                     click: function(event) {   
-                    this.onValueChanged(event.target.value)                     
-                        this._trigger( "cb", event, {
-                          list: this.options.list,
-                          selected: this.options.selected
-                        });
+                      this.onValueChanged(event.target.value);                     
+                      this._trigger( "cb", event, {
+                        list: this.options.list,
+                        selected: this.options.selected
+                      });
 
                     }
                 });
@@ -53,23 +50,8 @@
                    this.options.selected.push(value);
                }      
              
-            },
-/*             setList: function( value ) {                           
-                this.options.list = value;   
-             },    
-     
-             getList: function(  ) {   
-                 return this.options.list;                 
-             },    
-     
-             setSelected: function( value ) {            
-                this.options.selected = value;   
-             },    
-     
-             getSelected: function(  ) {   
-                 return this.options.selected;   
-                   
-              }*/
+            }
+
 
 
         });
