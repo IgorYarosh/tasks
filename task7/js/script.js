@@ -25,11 +25,7 @@
                 this._on('.igorWidgetCheckbox', {
                     click: function(event) {   
                       this.onValueChanged(event.target.value);                     
-                      this._trigger( "cb", event, {
-                        list: this.options.list,
-                        selected: this.options.selected
-                      });
-
+                      this._trigger( "cb", event, this.options.list, this.options.selected);
                     }
                 });
 

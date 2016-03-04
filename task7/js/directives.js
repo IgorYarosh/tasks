@@ -18,21 +18,30 @@ taskDirectives.directive('filelist',function($rootScope) {
 
       var filelist = $element;
       
-      filelist.igorWidget(
+      var widget = filelist.igorWidget(
                            {
                             cb: function(list, selected){
                               if(!$scope.$$phase){
                                 $scope.$apply(function(){
-                                  $scope.cb(list, selected);
+                                  $scope.cb({
+                                    list: list,
+                                    selected: selected
+                                  });
                                 });                                
                               } else {
-                                $scope.cb(list, selected);
+                                $scope.cb({
+                                  list: list,
+                                  selected: selected
+                                });
                               }
                             },
                             list : $scope.list,
                             selected: $scope.selected     
                            }
                           );
+      $scope.$watch( 'selected' ? $scope.selected, function(oldValue, newValue){
+        //widget.setSelected(newValue)
+      }, true);
 
 
     },
